@@ -1,7 +1,7 @@
 import json
 from pathlib import Path
 
-JSON_PATH = Path("foodkeeper.json")
+JSON_PATH = Path("data/foodkeeper.json")
 
 UNIT_TO_DAYS = {
     "day":1, "days":1,
