@@ -13,16 +13,13 @@ import { ThemedText } from '@/components/ThemedText'
 import { ThemedView } from '@/components/ThemedView'
 
 export default function HomeScreen() {
-  // ─── state for lookup ───────────────────────────────────────
   const [query, setQuery] = useState('')
   const [results, setResults] = useState<any[]>([])
   const [error, setError] = useState<string | null>(null)
 
-  // ─── lookup function ────────────────────────────────────────
   const lookup = async () => {
     setError(null)
     try {
-      // adjust this if you run on Android emulator (10.0.2.2)
       const base = 'http://192.168.12.129:5001'
       const resp = await fetch(`${base}/lookup?query=${encodeURIComponent(query)}`)
       if (!resp.ok) {
